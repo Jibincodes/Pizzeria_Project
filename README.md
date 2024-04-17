@@ -53,7 +53,8 @@ PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight de
 > 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
 ### Wireframe
-> 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools. 
+> 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools.
+![](images/sitemap.png)
 
 Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
 
