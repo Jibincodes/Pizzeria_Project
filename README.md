@@ -29,7 +29,13 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 
 ### Scenario
 
-PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight demonstration tool allowing the pizzaiolo (Role: Admin) to manage its pizza catalog. 
+As a group work, we decided to create an extended form of the pizzeria web application where 
+customers can easily browse through the pizzeria menu and place an order. It will include 
+additional features such as login for both admin and customers, bonus points for each order 
+sent by the customer and finally payment for their order. The bonus points mentioned above can 
+give the customer certain discounts for their orders, and these bonus points would be shown on 
+their profile. The menu, which contains all the information about the pizza and toppings, is 
+maintained by the admin.
 
 ### User Stories
 1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
