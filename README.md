@@ -38,13 +38,18 @@ their profile. The menu, which contains all the information about the pizza and 
 maintained by the admin.
 
 ### User Stories
-1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
-2. As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
-3. As an Admin, I want to use list views to explore and read my business data.
-4. As an Admin, I want to use edit and create views to maintain my business data.
-5. As an Admin, I want to log-in so that I can authenticate myself.
+1. As a user, I want to see the menu so that I can choose my favorite pizza and toppings.
+2. As a user, I want to create my own profile so that I can store my data.
+3. As a user, I want to log in so that I can authenticate myself and see my bonus points.
+4. As a user, I want to customize the pizza with specific toppings so that it matches my 
+preferences.
+5. As a user, I want to make the payment so that I can complete the order.
 6. As a User, I want to use list views so that I can access public pages.
-7. (Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
+7. As an Admin, I want to use list views to explore and read my business data.
+8. As an Admin, I want to use edit and create views to maintain my business data. For 
+example, the ability to add new pizzas or update existing pizzas on the menu.
+9. As an Admin, I want a consistent and simple web application so that it is easy to use and 
+maintain.
 
 ### Use Case
 
@@ -54,7 +59,11 @@ maintained by the admin.
 - UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
 - UC-3 [Edit a Pizza]: Admin can create, update, and delete pizzas from the menu.
 - UC-4 [Show Current Location Offer]: User can retrieve special menu by location
-
+- Customers can browse the pizzeria menu and place an order.
+- Customers can authenticate by logging in and check the available bonus points.
+- Customers can complete their order by making payment.
+- Admin can view all available information about pizzas and toppings.
+- Admin can create, update, and delete pizzas from the menu.
 ## Design
 > 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
