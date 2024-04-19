@@ -71,7 +71,7 @@ maintain.
 > 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools.
 ![](images/sitemap.png)
 
-Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
+Here is the planned sitemap for our pizzeria web application. It would consist of a home page, menu, about us page, order and confirmation page, and also user/admin pages.
 
 ### Prototype
 > 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
