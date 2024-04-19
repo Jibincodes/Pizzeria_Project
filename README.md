@@ -67,8 +67,23 @@ maintain.
 ## Design
 > 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
+![](images/myorder.png)
+**My order page design**
+
+![](images/orderconfirmed.png)
+**Order confirmation page design**
+
+![](images/login.png)
+**Login page design**
+
+![](images/customerprofile.png)
+**Customer profile page design**
+
+Here are some of the page design we have created for our pizzeria web application.
+
 ### Wireframe
 > 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools.
+
 ![](images/sitemap.png)
 
 Here is the planned sitemap for our pizzeria web application. It would consist of a home page, menu, about us page, order and confirmation page, and also user/admin pages.
