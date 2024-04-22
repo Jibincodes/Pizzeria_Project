@@ -23,6 +23,10 @@ public class WelcomeController {
         String role = userDetails.getAuthorities().toArray()[1].toString();
         return role;
     }
+    @GetMapping(value="/aboutus")
+    public String getAboutUsPage() {
+        return "A project done by students of FHNW with help of Devid and Charuta";
+    }
 
 
 }
