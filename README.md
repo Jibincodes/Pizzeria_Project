@@ -97,6 +97,8 @@ Here is the planned sitemap for our pizzeria web application. It would consist o
 The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
 ![](images/domainmodel.png)
 ![](images/domain-model.png)
+> 🚧: After discusion, the old domain model picture should be removed.
+![](images/final_domainmodel.png)
 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
