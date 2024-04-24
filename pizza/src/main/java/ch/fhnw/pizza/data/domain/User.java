@@ -31,7 +31,7 @@ public class User {
     @Column(name = "points")
     private double points;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private List<Order> orders;
 
     public User() {}
