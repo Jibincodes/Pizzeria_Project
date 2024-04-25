@@ -73,7 +73,7 @@ public class MenuController {
     }
 
     @GetMapping(path="", produces = "application/json")
-    public ResponseEntity<Menu> getMenu(@RequestParam String location) {
+    public ResponseEntity<Menu> getMenu(@RequestParam String location) {//?location
         Menu menu = menuService.getMenuByLocation(location);
         return ResponseEntity.ok(menu);      
     }
