@@ -28,6 +28,10 @@ public class Pizza {
     @ManyToOne
     private Menu menu;
 
+    //do @ManytoOne to order as well 
+    //private Order order;
+    // as it is unidirectional we do not 
+
     public Long getId() {
         return id;
     }
