@@ -24,7 +24,7 @@ public class Order {
     @Column(name = "id")
     private Long id;
     
-    
+    //Maybe it is wrong here as it is unidirectional. just needs the @JoinColumn
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "order")
     private List<Pizza> pizzas = new ArrayList<>();
