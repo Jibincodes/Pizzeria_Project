@@ -30,7 +30,8 @@ public class Pizza {
 
     //do @ManytoOne to order as well 
     //private Order order;
-    // as it is unidirectional we do not 
+    // as it is unidirectional we do not . It would be wrong if I do it that way
+    // it is not necessary to have a reference to the order in the pizza class
 
     public Long getId() {
         return id;
