@@ -24,12 +24,13 @@ public class Order {
     @Column(name = "id")
     private Long id;
     
-    //Maybe it is wrong here as it is unidirectional. just needs the @JoinColumn
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "order")
+    //it is wrong here as it is unidirectional. just needs the @JoinColumn
+    //not mapped by
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "order_id")
     private List<Pizza> pizzas = new ArrayList<>();
     
-
+    // is this correct?
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
