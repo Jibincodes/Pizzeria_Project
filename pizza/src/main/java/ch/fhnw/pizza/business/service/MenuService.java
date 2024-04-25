@@ -12,7 +12,7 @@ import ch.fhnw.pizza.data.repository.PizzaRepository;
 @Service
 public class MenuService {
 
-    @Autowired
+    @Autowired // to handle dependency injection
     private PizzaRepository pizzaRepository;
 
     public Pizza findPizzaById(Long id) {
