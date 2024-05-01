@@ -17,7 +17,7 @@ public class WelcomeController {
         return "Hello, welcome to our Pizzeria! A place is home";
     }
 
-    @GetMapping(value="/user")
+    @GetMapping(value="/user") //explains us the role according to authentication 
     public String getUserRole(Authentication auth) {
         UserDetails userDetails = (UserDetails) auth.getPrincipal();
         String role = userDetails.getAuthorities().toArray()[1].toString();
