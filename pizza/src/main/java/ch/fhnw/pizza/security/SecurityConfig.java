@@ -41,6 +41,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests( auth -> auth
+                        .requestMatchers("/login").permitAll() // added by me today check with Devid
                         .requestMatchers("/menu").hasRole("USER") //note that the role need not be prefixed with "ROLE_"
                         .requestMatchers("/menu/pizza/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
                         .requestMatchers("/menu/**",
