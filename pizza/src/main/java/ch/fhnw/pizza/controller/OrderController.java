@@ -16,12 +16,13 @@ public class OrderController {
     public String placeOrder(@RequestBody Order order) {
         // Logic to process the order
         //create order
-     //   List<Order> orders = // Logic to fetch all orders from the database or any other data source
 
-        // Convert the list of orders to a string representation
-    //    String ordersString = orders.toString();
+     /*   List<Order> orders = // Logic to fetch all orders from the database or any other data source
 
-     //   return ordersString;
+      Convert the list of orders to a string representation
+      String ordersString = orders.toString();
+
+       return ordersString;*/
         
         return "Order placed successfully!";
     }
