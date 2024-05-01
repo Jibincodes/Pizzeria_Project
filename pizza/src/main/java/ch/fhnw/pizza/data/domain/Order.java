@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -46,6 +47,11 @@ public class Order {
     @Column(name = "finalprice")
     private Double finalprice;
 
+    //-----------------------------------
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
+    //-----------------------------------
     public Double getFinalprice() {
         return finalprice;
     }
