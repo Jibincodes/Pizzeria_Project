@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.fhnw.pizza.business.service.MenuService;
 import ch.fhnw.pizza.data.domain.Pizza;
+import ch.fhnw.pizza.data.domain.User;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
@@ -39,6 +40,14 @@ public class PizzaApplication {
 		pizza.setPizzaToppings("Tomato sauce, mozzarella, mushrooms");
 		menuService.addPizza(pizza);
 		
+		// for fun
+		User user = new User();
+		user.setUserName("admin");
+		user.setEmail("admin@email.com");
+		user.setPassword("password");
+		user.setPoints(0);
+		user.setOrders(null);
+
 	}
 
 }
