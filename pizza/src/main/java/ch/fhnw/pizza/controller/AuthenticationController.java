@@ -15,8 +15,8 @@ public class AuthenticationController {
 
     @PostMapping("/login") // changed from Getmapping 
     //public String getLogin(@RequestParam String username, @RequestParam String password) {
-        public String getLogin(@RequestBody User user) {    
         //if (username.equals("admin") && password.equals("password")) {
+        public String getLogin(@RequestBody User user) {    
         if (user.getUserName().equals("admin") && user.getPassword().equals("password")) {    
             return "Login successful!";
         } else {
