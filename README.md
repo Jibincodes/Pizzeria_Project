@@ -100,7 +100,7 @@ The `ch.fhnw.pizza.data.domain` package contains the following domain objects / 
 > 🚧: After discusion, the old domain model picture should be removed.
 ![](images/final_domainmodel.png)
 
-> 🚧:The connection between menu and user should be deleted and also add the attribute finalprice to Payment
+> 🚧:The connection between menu and user should be deleted and also add the attribute finalprice to Payment. //done already, delete the comment later
 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
