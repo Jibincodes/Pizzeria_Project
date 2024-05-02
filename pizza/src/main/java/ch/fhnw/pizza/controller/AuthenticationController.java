@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class AuthenticationController {
 
-    @PostMapping("/login") // changed from Getmapping 
+   /*  @PostMapping("/login") // changed from Getmapping 
     //public String getLogin(@RequestParam String username, @RequestParam String password) {
         //if (username.equals("admin") && password.equals("password")) {
        //public String getLogin(@RequestBody User user) {     
@@ -27,6 +27,6 @@ public class AuthenticationController {
             return new RedirectView("/login?error=true"); 
            // return "Invalid credentials!";
         }
-    }
+    } */
     
 }
