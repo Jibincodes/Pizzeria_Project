@@ -26,4 +26,8 @@ public class OrderController {
         
         return "Order placed successfully!";
     }
+    // idea is to CRUD same as menu for orders
+    // i.e. get , post, put, delete for orders
+
+    // also maybe final price calculation in order controller which is displayed in checkout cart
 }
