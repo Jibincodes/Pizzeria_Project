@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class AuthenticationController {
+// this whole part is commented out as there is already an existing login page and we decided to redirect to the my profile page using Budibase
+// as discussed with Devid
 
    /*  @PostMapping("/login") // changed from Getmapping 
     //public String getLogin(@RequestParam String username, @RequestParam String password) {
