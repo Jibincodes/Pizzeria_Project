@@ -12,8 +12,14 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void addUser(User user) {
-        userRepository.save(user);
+    public User addUser(User user) throws Exception{
+        if(user.getUserName() != null) {
+            if (userRepository.findByUserName(user.getUserName()) == null)
+                return userRepository.save(user);
+            throw new Exception("User " + user.getUserName() + " already exists");
+        }
+        throw new Exception("Invalid user name ");
+
     }
 }
 
