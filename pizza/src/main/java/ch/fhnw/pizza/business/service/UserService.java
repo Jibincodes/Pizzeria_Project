@@ -14,14 +14,19 @@ public class UserService {
 
     public User addUser(User user) throws Exception{
         if(user.getUserName() != null) {
-            if (userRepository.findByUserName(user.getUserName()) == null)
+            if (userRepository.findByUserName(user.getUserName()) == null){
+                //added extra 
+                user.setRole("ROLE_USER");
+                //might not be needed the above line
                 return userRepository.save(user);
+            }
+
             throw new Exception("User " + user.getUserName() + " already exists");
         }
         throw new Exception("Invalid user name ");
 
     }
-    //unnecessary
+    //unnecessary -- needed
     public User findByUsername(String username) {
         return userRepository.findByUserName(username);
     }
