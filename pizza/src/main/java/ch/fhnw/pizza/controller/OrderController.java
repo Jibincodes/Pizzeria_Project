@@ -51,7 +51,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping(path="/orders", produces = "application/json")
+    @GetMapping(path="/order", produces = "application/json")
     public List<Order> getOrderList() {
         List<Order> orderList = orderService.getAllOrders();
 
