@@ -69,7 +69,7 @@ public class PizzaApplication {
 		user.setOrders(Arrays.asList(order)); 
 
        userService.addUser(user);
-	   orderService.addOrder(order);
+	   //orderService.addOrder(order);
 
 
 		// Save user and order
