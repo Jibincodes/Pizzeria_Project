@@ -16,7 +16,7 @@ public class UserService {
         if(user.getUserName() != null) {
             if (userRepository.findByUserName(user.getUserName()) == null){
                 //added extra 
-                user.setRole("ROLE_USER");
+               // user.setRole("ROLE_USER");
                 //might not be needed the above line
                 return userRepository.save(user);
             }
