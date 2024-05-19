@@ -31,6 +31,10 @@ public class User {
     @Column(name = "points")
     private double points;
 
+    @Column(name = "role")
+    private String role;
+
+    
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private List<Order> orders;
 
@@ -42,6 +46,7 @@ public class User {
           this.password = user.getPassword();
           this.points = user.getPoints();
           this.orders = user.getOrders();
+          this.role = user.getRole();
         }
         
     public Long getId() {
@@ -74,6 +79,12 @@ public class User {
     public void setPoints(double points) {
         this.points = points;
         }
+    public String getRole() {
+            return role;
+        }
+    public void setRole(String role) {
+            this.role = role;
+        }    
     // create order class next and it should be fixed
     public List<Order> getOrders() {
         return orders;
