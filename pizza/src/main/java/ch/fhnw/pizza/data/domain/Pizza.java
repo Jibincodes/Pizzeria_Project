@@ -28,6 +28,11 @@ public class Pizza {
     @ManyToOne
     private Menu menu;
 
+    //price of the pizza as we deal with odering
+    @Column(name = "price")
+    private Double price;
+    
+
     //do @ManytoOne to order as well 
     //private Order order;
     // as it is unidirectional we do not . It would be wrong if I do it that way
@@ -55,6 +60,22 @@ public class Pizza {
 
     public void setPizzaName(String pizzaName) {
         this.pizzaName = pizzaName;
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     } 
     
 }
