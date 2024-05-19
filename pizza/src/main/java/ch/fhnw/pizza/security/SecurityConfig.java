@@ -5,15 +5,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
-
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import ch.fhnw.pizza.business.service.UserService;
+
 import static org.springframework.security.config.Customizer.withDefaults;
+
+import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
@@ -21,19 +25,32 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
 
     @Bean
-    public UserDetailsService users() {
-        //Create two users with different roles and add them to the in-memory user store
-
-        return new InMemoryUserDetailsManager(
-            User.withUsername("myuser")
-                .password("{noop}password")
-                .authorities("READ","ROLE_USER")
-                .build(), 
-            User.withUsername("myadmin")
-                .password("{noop}password")
-                .authorities("READ","ROLE_ADMIN")
-                .build());
-
+    public UserDetailsService userDetailsService(UserService userService) {
+        return username -> {
+            if ("myuser".equals(username)) {
+                return User.withUsername("myuser")
+                    .password("{noop}password")
+                    .authorities("READ", "ROLE_USER")
+                    .build();
+            } else if ("myadmin".equals(username)) {
+                return User.withUsername("myadmin")
+                    .password("{noop}password")
+                    .authorities("READ", "WRITE", "ROLE_ADMIN")
+                    .build();
+            } else {// check in school, could be wrong
+                ch.fhnw.pizza.data.domain.User user = userService.findByUsername(username);
+                if (user != null) {
+                    // Retrieve user details from the database and return accordingly
+                    return new org.springframework.security.core.userdetails.User(
+                            user.getUserName(),
+                            user.getPassword(),
+                            Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
+                    );
+                } else {
+                    throw new UsernameNotFoundException("User not found");
+                }
+            }
+        };
     }
 
     @Bean
@@ -43,8 +60,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests( auth -> auth
                      //   .requestMatchers("/login").permitAll() // added by me today check with Devid
                         .requestMatchers("/menu").hasRole("USER") //note that the role need not be prefixed with "ROLE_"
-                    //    .requestMatchers("/order").hasRole("USER")
-                    //    .requestMatchers("/order").hasRole("ADMIN")
+                        .requestMatchers("/order").hasRole("USER")
+                        .requestMatchers("/order").hasRole("ADMIN")
                         .requestMatchers("/menu/pizza/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
                         .requestMatchers("/menu/**",
                                                     "/**", //allow access to the home page
