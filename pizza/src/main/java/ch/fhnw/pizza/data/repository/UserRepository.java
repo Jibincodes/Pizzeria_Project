@@ -7,7 +7,5 @@ import ch.fhnw.pizza.data.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-    User findByUserName(String userName);
-    
-
+    User findByUserName(String userName);   
 }
