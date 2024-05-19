@@ -21,5 +21,9 @@ public class UserService {
         throw new Exception("Invalid user name ");
 
     }
+    //unnecessary
+    public User findByUsername(String username) {
+        return userRepository.findByUserName(username);
+    }
 }
 
