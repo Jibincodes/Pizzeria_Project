@@ -54,20 +54,23 @@ public class PizzaApplication {
 		
 		// dummy test
 		User user = new User();
-		user.setUserName("john");
+		user.setUserName("John");
 		user.setEmail("john@email.com");
 		user.setPassword("password");
 		user.setPoints(0);
-
-		//userService.addUser(user);
+		user.setRole("ROLE_USER");
+		
 				
 		Order order = new Order();
 		order.setPizzas(Arrays.asList(pizza1, pizza2));
 		order.setFinalprice(pizza1.getPrice() + pizza2.getPrice());
 		order.setUser(user);
-		//orderService.addOrder(order);
-
+		
 		user.setOrders(Arrays.asList(order)); 
+
+       userService.addUser(user);
+	   orderService.addOrder(order);
+
 
 		// Save user and order
 		
