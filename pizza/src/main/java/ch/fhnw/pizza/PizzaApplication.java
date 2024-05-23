@@ -58,8 +58,9 @@ public class PizzaApplication {
 		user.setEmail("john@email.com");
 		user.setPassword("password");
 		user.setPoints(0);
-		user.setRole("ROLE_USER");
+		user.setRole("USER");
 		
+		userService.addUser(user);
 				
 		Order order = new Order();
 		order.setPizzas(Arrays.asList(pizza1, pizza2));
@@ -67,9 +68,9 @@ public class PizzaApplication {
 		order.setUser(user);
 		
 		user.setOrders(Arrays.asList(order)); 
-
-       userService.addUser(user);
-	   //orderService.addOrder(order);
+        orderService.addOrder(order);
+      
+	  
 
 
 		// Save user and order
