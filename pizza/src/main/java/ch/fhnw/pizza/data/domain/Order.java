@@ -27,9 +27,9 @@ public class Order {
     
     //it is wrong here as it is unidirectional. just needs the @JoinColumn
     //not mapped by
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany
     @JoinColumn(name = "order_id")
-    private List<Pizza> pizzas = new ArrayList<>();
+    private List<Pizza> pizzas;
     
     // is this correct?
     @ManyToOne

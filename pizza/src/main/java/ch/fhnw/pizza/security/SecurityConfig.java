@@ -3,6 +3,10 @@ package ch.fhnw.pizza.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,11 +15,12 @@ import org.springframework.security.core.userdetails.User;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import ch.fhnw.pizza.business.service.UserDetailsServiceImpl;
-import ch.fhnw.pizza.business.service.UserService;
 //import ch.fhnw.pizza.data.domain.User;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -26,9 +31,6 @@ import java.util.Collections;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-
-    @Autowired
-    private UserService userService;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -74,6 +76,24 @@ public class SecurityConfig {
                 .httpBasic(withDefaults())
                 .build(); 
     } 
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        DaoAuthenticationProvider authenticationProvider=new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
+    } 
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
+    }
 
 
         
