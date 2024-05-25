@@ -3,6 +3,8 @@ package ch.fhnw.pizza.data.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,6 +36,8 @@ public class Order {
     // is this correct?
     @ManyToOne
     @JoinColumn(name = "user_id")
+    // discuss this
+    @JsonIgnore
     private User user;
 
     public User getUser() {

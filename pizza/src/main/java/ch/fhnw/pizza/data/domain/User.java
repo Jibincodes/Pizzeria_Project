@@ -2,6 +2,8 @@ package ch.fhnw.pizza.data.domain;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,7 +23,7 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "user_name")
+    @Column(name = "userName")
     private String userName;
 
     @Column(name = "email")
@@ -38,6 +40,8 @@ public class User {
 
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    //discuss this 
+    @JsonManagedReference
     private List<Order> orders;
 
     public User() {}
