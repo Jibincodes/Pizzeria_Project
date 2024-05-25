@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import ch.fhnw.pizza.business.service.OrderService;
 import ch.fhnw.pizza.data.domain.Order;
 
@@ -51,7 +51,7 @@ public class OrderController {
         }
     }
 
-    @GetMapping(path="/order", produces = "application/json")
+    @GetMapping(produces = "application/json")
     public List<Order> getOrderList() {
         List<Order> orderList = orderService.getAllOrders();
 
