@@ -1,6 +1,9 @@
 package ch.fhnw.pizza.business.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,16 @@ public class UserService {
     //unnecessary -- needed
     public User findByUsername(String username) {
         return userRepository.findByUserName(username);
+    }
+
+    // to get the current user only
+    public User getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {
+            String username = authentication.getName();
+            return userRepository.findByUserName(username);
+        }
+        throw new IllegalStateException("User not authenticated");
     }
 }
 
