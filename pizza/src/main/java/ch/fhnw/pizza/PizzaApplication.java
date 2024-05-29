@@ -69,6 +69,15 @@ public class PizzaApplication {
 		
 		user.setOrders(Arrays.asList(order)); 
         orderService.addOrder(order);
+
+		User user1 = new User();
+		user1.setUserName("Jithin");
+		user1.setEmail("jithin@email.com");
+		user1.setPassword("password");
+		user1.setPoints(0);
+		user1.setRole("USER");
+		
+		userService.addUser(user1);
       
 	  
 
