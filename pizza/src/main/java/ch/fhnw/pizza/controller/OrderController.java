@@ -41,7 +41,7 @@ public class OrderController {
     }
 
     @GetMapping(path="/{id}", produces = "application/json")
-    public ResponseEntity getOrder(@RequestParam Long id) {
+    public ResponseEntity getOrder(@PathVariable Long id) {
         try{
             Order order = orderService.findOrderById(id);
             return ResponseEntity.ok(order);
