@@ -66,9 +66,9 @@ public class PizzaApplication {
 		order.setPizzas(Arrays.asList(pizza1, pizza2));
 		order.setFinalprice(pizza1.getPrice() + pizza2.getPrice());
 		order.setUser(user);
-		
+		orderService.addOrder(order);
 		user.setOrders(Arrays.asList(order)); 
-        orderService.addOrder(order);
+       // orderService.addOrder(order);
 
 		User user1 = new User();
 		user1.setUserName("Jithin");
