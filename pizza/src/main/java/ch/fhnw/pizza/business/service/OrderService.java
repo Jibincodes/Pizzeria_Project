@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ch.fhnw.pizza.data.domain.Order;
 import ch.fhnw.pizza.data.domain.Pizza;
+import ch.fhnw.pizza.data.domain.User;
 import ch.fhnw.pizza.data.repository.OrderRepository;
 
 @Service
@@ -56,11 +57,15 @@ private OrderRepository orderRepository;
     }
 
     //get all orders
-      public List<Order> getAllOrders() {
+    /*   public List<Order> getAllOrders() {
        // List<Order> orderList = orderRepository.findAll();
         //return orderList;
         return orderRepository.findAll();
-      }
+      }*/ 
+
+    public List<Order> getOrdersByUser(User user) {
+       return orderRepository.findByUser(user);
+    } 
       
 
 }
