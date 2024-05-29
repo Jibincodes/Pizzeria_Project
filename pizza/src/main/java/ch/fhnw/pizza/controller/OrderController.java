@@ -1,4 +1,3 @@
-
 package ch.fhnw.pizza.controller;
 
 import java.util.List;
@@ -12,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 import ch.fhnw.pizza.business.service.OrderService;
+import ch.fhnw.pizza.business.service.UserService;
 import ch.fhnw.pizza.data.domain.Order;
+import ch.fhnw.pizza.data.domain.User;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,50 +30,66 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping(consumes="application/json", produces="application/json")
+    @Autowired
+    private UserService userService;
+
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity placeOrder(@RequestBody Order order) {
-        try{
+        try {
+            User currentUser = userService.getCurrentUser();
+            order.setUser(currentUser);
             order = orderService.addOrder(order);
-            
+            return ResponseEntity.ok(order);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Order already exists with given id");
         }
-        return ResponseEntity.ok(order);
     }
 
-    @GetMapping(path="/{id}", produces = "application/json")
+    @GetMapping(path = "/{id}", produces = "application/json")
     public ResponseEntity getOrder(@PathVariable Long id) {
-        try{
+        try {
             Order order = orderService.findOrderById(id);
-            return ResponseEntity.ok(order);
-        }
-        catch (Exception e) {
+            User currentUser = userService.getCurrentUser();
+            if (order.getUser().getId().equals(currentUser.getId())) {
+                return ResponseEntity.ok(order);
+            } else {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to view this order");
+            }
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No order found with given id");
         }
     }
 
     @GetMapping(produces = "application/json")
-    public List<Order> getOrderList() {
-        List<Order> orderList = orderService.getAllOrders();
-
-        return orderList;
+    public ResponseEntity getOrderList() {
+        User currentUser = userService.getCurrentUser();
+        List<Order> orderList = orderService.getOrdersByUser(currentUser);
+        return ResponseEntity.ok(orderList);
     }
 
-    @PutMapping(path="/{id}", consumes="application/json", produces = "application/json")
+    @PutMapping(path = "/{id}", consumes = "application/json", produces = "application/json")
     public ResponseEntity updateOrder(@PathVariable Long id, @RequestBody Order order) {
-        try{
+        try {
+            Order existingOrder = orderService.findOrderById(id);
+            User currentUser = userService.getCurrentUser();
+            if (!existingOrder.getUser().getId().equals(currentUser.getId())) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to update this order");
+            }
             order = orderService.updateOrder(id, order);
-            
+            return ResponseEntity.ok(order);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("No order found with given id");
-
         }
-        return ResponseEntity.ok(order);
     }
 
-    @DeleteMapping(path="/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity deleteOrder(@PathVariable Long id) {
-        try{
+        try {
+            Order order = orderService.findOrderById(id);
+            User currentUser = userService.getCurrentUser();
+            if (!order.getUser().getId().equals(currentUser.getId())) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to delete this order");
+            }
             orderService.deleteOrder(id);
             return ResponseEntity.ok("Order with id " + id + " deleted");
         } catch (Exception e) {
