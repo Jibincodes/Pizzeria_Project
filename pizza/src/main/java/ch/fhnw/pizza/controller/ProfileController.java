@@ -38,13 +38,39 @@ public class ProfileController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     } */
-    @GetMapping(path="/{username}", produces = "application/json")
+    
+    //--------------------------------------------
+    /*@GetMapping(path="/{username}", produces = "application/json")
     public ResponseEntity getUserProfile(@PathVariable String username) {
         User user = userservice.findByUsername(username);
         if (user != null) {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No user was found");
+        }
+    }*/
+    //--------------------------------------------
+    @GetMapping(produces = "application/json")
+    public ResponseEntity getCurrentUserProfile() {
+        try {
+            User currentUser = userservice.getCurrentUser();
+            return ResponseEntity.ok(currentUser);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not authenticated");
+        }
+    }
+
+    @GetMapping(path = "/{username}", produces = "application/json")
+    public ResponseEntity getUserProfile(@PathVariable String username) {
+        try {
+            User currentUser = userservice.getCurrentUser();
+            if (currentUser.getUserName().equals(username)) {
+                return ResponseEntity.ok(currentUser);
+            } else {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to view this profile");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not authenticated");
         }
     }
 
