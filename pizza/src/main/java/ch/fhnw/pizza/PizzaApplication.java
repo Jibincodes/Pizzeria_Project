@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.fhnw.pizza.business.service.MenuService;
 import ch.fhnw.pizza.business.service.OrderService;
+import ch.fhnw.pizza.business.service.PaymentService;
 import ch.fhnw.pizza.business.service.UserService;
 import ch.fhnw.pizza.data.domain.Order;
+import ch.fhnw.pizza.data.domain.Payment;
 import ch.fhnw.pizza.data.domain.Pizza;
 import ch.fhnw.pizza.data.domain.User;
 import io.swagger.v3.oas.annotations.Hidden;
@@ -28,6 +30,8 @@ public class PizzaApplication {
 	private UserService userService;
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private PaymentService paymentService;
 
 
 	public static void main(String[] args) {
@@ -69,6 +73,11 @@ public class PizzaApplication {
 		orderService.addOrder(order);
 		user.setOrders(Arrays.asList(order)); 
        // orderService.addOrder(order);
+
+	    Payment payment = new Payment();
+        payment.setOrder(order);
+        payment.setCompleted(true);
+		paymentService.addPayment(payment);
 
 		User user1 = new User();
 		user1.setUserName("Jithin");
