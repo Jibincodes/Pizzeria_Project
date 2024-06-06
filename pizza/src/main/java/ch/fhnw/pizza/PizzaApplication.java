@@ -88,10 +88,16 @@ public class PizzaApplication {
 		
 		userService.addUser(user1);
       
-	  
-
-
-		// Save user and order
+	    //add dummy data for user as Admin as well, so we can test out all the features
+   		User user2 = new User();
+		user2.setUserName("Admin");
+		user2.setEmail("admin@email.com");
+		user2.setPassword("password");
+		user2.setPoints(0);
+		user2.setRole("ADMIN");
+        // implement the necessary for UserDetailsServiceImpl
+		// for admin I mean the role
+		userService.addUser(user2);
 		
 		
 		

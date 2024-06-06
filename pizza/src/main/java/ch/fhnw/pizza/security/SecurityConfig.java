@@ -92,7 +92,7 @@ public class SecurityConfig {
                         .requestMatchers("/myprofile").hasAnyRole("USER", "ADMIN")   
                         .requestMatchers("/order/**").authenticated()   //needed?        
                         .requestMatchers("/myprofile/**").authenticated()         
-                        .requestMatchers("/menu/pizza/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
+                        .requestMatchers("/menu/pizzas/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
                         .requestMatchers("/menu/**",
                                                     "/**", //allow access to the home page
                                                     "/swagger-ui.html", //allow access to the swagger UI
