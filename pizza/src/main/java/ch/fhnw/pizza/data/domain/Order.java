@@ -52,9 +52,9 @@ public class Order {
     private Double finalprice;
 
     //-----------------------------------
-    @OneToOne
-    @JoinColumn(name = "payment_id")
-    private Payment payment;
+   // @OneToOne
+   // @JoinColumn(name = "payment_id")
+   // private Payment payment;
     //-----------------------------------
     public Double getFinalprice() {
         return finalprice;
