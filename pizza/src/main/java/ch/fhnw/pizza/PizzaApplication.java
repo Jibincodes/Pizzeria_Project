@@ -85,8 +85,22 @@ public class PizzaApplication {
 		user1.setPassword("password");
 		user1.setPoints(0);
 		user1.setRole("USER");
-		
 		userService.addUser(user1);
+
+		Order jithinOrder = new Order();
+		jithinOrder.setPizzas(Arrays.asList(pizza1)); // Assuming pizza1 and pizza2 are already initialized
+		jithinOrder.setFinalprice(pizza1.getPrice());
+		jithinOrder.setUser(user1);
+		orderService.addOrder(jithinOrder);
+        
+		user1.setOrders(Arrays.asList(jithinOrder));
+
+		Payment jithinPayment = new Payment();
+		Long orderId = jithinOrder.getId();
+		paymentService.addPayment(orderId, jithinPayment);
+
+		
+		
       
 	    //add dummy data for user as Admin as well, so we can test out all the features
    		User user2 = new User();
