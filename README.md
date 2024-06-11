@@ -164,7 +164,8 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 6. Update the pizzeria URL in the datasource and publish your app.
 
 ## Project Management
-> 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
+
+As described below, we had divided our team into 2 parts. Since Jibin has more experience in the software development background, he happily accepted the part of working in the backend. And the rest of us mainly worked on the domain design and front-end implementations using Budibase.
 
 ### Roles
 - Back-end developer: Jibin Mathew Peechatt
@@ -178,12 +179,15 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 4. **Business Logic and API Design**: Definition of business logic and API.
 5. **Data and API Implementation**: Implementation of data access and business logic layers, and API.
 6. **Security and Frontend Implementation**: Integration of security framework and frontend realisation.
-7. (optional) **Deployment**: Deployment of Web application on cloud infrastructure.
+7.  **Deployment**: Deployment of Web application on cloud infrastructure.
 
+All of these milestones were successfully achieved during the implementation of the project.
 
 #### Maintainer
-- Charuta Pande
-- Devid Montecchiari
+- Jibin Mathew Peechatt
+- Leon Bytyqi
+- Marko Jurcevic
+- Jevoen Jenifar
 
 #### License
 - [Apache License, Version 2.0](blob/master/LICENSE)
