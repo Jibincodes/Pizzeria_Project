@@ -16,12 +16,14 @@ This is a minimal project that supports all the minimal CRUD functions needed to
 - [Implementation](#implementation)
   - [Backend Technology](#backend-technology)
   - [Frontend Technology](#frontend-technology)
+- [Execution](#execution)
+  - [Deployment](#deployment)  
 - [Project Management](#project-management)
   - [Roles](#roles)
   - [Milestones](#milestones)
 
 ## Analysis
- 
+
 ### Scenario
 
 As a group work, we decided to create an extended form of the pizzeria web application where 
@@ -164,27 +166,22 @@ In addition, we have added the following:
 ```        
 
 ### Frontend Technology
-> 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
 
 This Application is relying on a low code platform, called [Buidbase](https://budibase.com/) for the frontend.
 
 The goal with Budibase is to show a demo of the running application and how it can be connected to the backend. We used the sitemap and backend structure to decide on the views for this application. The views would mainly include: home page, login page, menu page, profile page, order page, payment confirmation page, and about us page.
 
+The APIs that we have used in the Budibase are shown below:
+![](images/API_Budibase.png)
+Not all available APIs are used here if you look at our backend, as we only used the ones necessary to show a demo of the application. The most used APIs are: Login test (Login page), Get Menu by Location (Home page), Get pizzas (Menu page), Order in general (Profile page), Get Userprofile (Profile page), Get Order by ID (Order page), Post Order (Menu Page), Post Pizza with Bindings (Menu page), and finally Payment confirmation (payment confirmation page).
+
 This Web application is available for preview at https://inttech.budibase.app/app/brugg5pizzeria#/home. 
 
 ## Execution
-> 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
 
-The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
+### Deployment
 
-> 🚧: This is a shortened description for example purposes. A complete tutorial will be provided in a dedicated lecture.
-
-1. Clone PizzaRP in a new repository.
-2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
-3. Run the PizzaRP main available at PizzaApplication.java on your own codespace.
-4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
-5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
-6. Update the pizzeria URL in the datasource and publish your app.
+As the codespace URL of this Repo is subject to change, we have deployed the application using [Render](https://render.com/) with the help of the Docker file. The application is available through the link: https://pizzeria-project.onrender.com
 
 ## Project Management
 
