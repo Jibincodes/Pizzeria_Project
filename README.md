@@ -1,6 +1,6 @@
 # Pizzeria Project
 
-This is a minimal Pizzeria Reference Project (PizzaRP) as a template for students. 
+This is a minimal project that supports all the minimal CRUD functions needed to run a pizzeria.
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -63,7 +63,6 @@ maintain.
 - Admin can view all available information about pizzas and toppings.
 - Admin can create, update, and delete pizzas from the menu.
 ## Design
-> 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
 ![](images/myorder.png)
 **My order page design**
@@ -80,25 +79,20 @@ maintain.
 Here are some of the page design we have created for our pizzeria web application.
 
 ### Wireframe
-> 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools.
 
 ![](images/sitemap.png)
 
-Here is the planned sitemap for our pizzeria web application. It would consist of a home page, menu, about us page, order and confirmation page, and also user/admin pages.
+Here is the planned sitemap for our pizzeria web application. It would consist of a home page, menu, about us page, order and confirmation page, and also user pages.
 
 ### Prototype
 > 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
 
 ### Domain Design
-> 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
 
 The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
-![](images/domainmodel.png)
-![](images/domain-model.png)
-> 🚧: After discusion, the old domain model picture should be removed.
-![](images/final_domainmodel.png)
 
-> 🚧:The connection between menu and user should be deleted and also add the attribute finalprice to Payment. //done already, delete the comment later. 
+
+![](images/final_domainmodel.png)
 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
@@ -173,8 +167,9 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 > 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
 
 ### Roles
-- Back-end developer: Charuta Pande 
-- Front-end developer: Devid Montecchiari
+- Back-end developer: Jibin Mathew Peechatt
+- Front-end developer: Leon Bytyqi, Jevoen Jenifar, and Marko Jurcevic
+- Of course, credit also goes to Devid Montecchiari and Charuta Pandey, as we used their template to further develop the application.
 
 ### Milestones
 1. **Analysis**: Scenario ideation, use case analysis and user story writing.
