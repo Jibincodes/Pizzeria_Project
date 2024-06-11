@@ -147,7 +147,7 @@ Then, the following further dependencies have been added to the project `pom.xml
 ### Frontend Technology
 > 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
 
-This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/pizzeria. 
+This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/brugg5pizzeria#/home. 
 
 ## Execution
 > 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
