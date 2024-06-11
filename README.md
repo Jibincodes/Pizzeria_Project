@@ -140,8 +140,15 @@ Then, the following further dependencies have been added to the project `pom.xml
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>2.3.0</version>
-   </dependency>
+</dependency>
 ```
+- OAuth2 (for token based authentication):
+```XML
+<dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+</dependency>
+```        
 
 ### Frontend Technology
 > 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
