@@ -94,7 +94,6 @@ The `ch.fhnw.pizza.data.domain` package contains the following domain objects / 
 ![](images/final_domainmodel.png)
 
 ### Business Logic 
-> 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
 
 Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
 
@@ -107,6 +106,20 @@ Based on the UC-4, there will be two offers and a standard offer. Given a locati
 **Param**: `value="location"` Admitted value: "Basel","Brugg".
 
 **Method:** `GET`
+
+Based on the UC-5[Place an order], we have created all the necessary measures to create, update, retrieve and delete the order through the OrderService. The main methods that we have implemented for this are: 1.Finding an order by the order ID. 2. To add an order using the JSON format 3. To update the order using the ID to set a new final price due to the discount features. 4. To delete the order by the order ID 5. To get all the orders made by a specific user. In addition, we also needed a method to make sure that only the orders of the currently logged in user are shown and not those of anyone else. So for this purpose we have a method to get the current user through the UserService.
+
+**Path**: [`/api/order"`] 
+
+**Method:** `GET`,`POST`
+
+**Path**: [`/api/order/{id}"`] 
+
+**Method:** `GET`,`PUT`,`DELETE`
+
+The rest of the API documentation is provided in the Swagger endpoint. The default Swagger UI page is available at /swagger-ui.html. Since we deployed the application using Render, it can be accessed directly from this link: https://pizzeria-project.onrender.com/swagger-ui/index.html
+
+But if you have any questions regarding the implementation of the business logic, please let us know :)
 
 ## Implementation
 > 🚧: Briefly describe your technology stack, which apps were used and for what.
