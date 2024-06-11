@@ -167,7 +167,7 @@ In addition, we have added the following:
 
 ### Frontend Technology
 
-This Application is relying on a low code platform, called [Buidbase](https://budibase.com/) for the frontend.
+This Application is relying on a low code platform, called [Budibase](https://budibase.com/) for the frontend.
 
 The goal with Budibase is to show a demo of the running application and how it can be connected to the backend. We used the sitemap and backend structure to decide on the views for this application. The views would mainly include: home page, login page, menu page, profile page, order page, payment confirmation page, and about us page.
 
