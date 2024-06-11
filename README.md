@@ -51,17 +51,16 @@ maintain.
 
 ### Use Case
 
-![](images/use-case.png)
+![](images/Usecasefinal.png)
 
-- UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
-- UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
+- UC-1 [View all the Pizza on the menu]: Admin can view all available information about pizzas and toppings.
+- UC-2 [View a single Pizza]: Admin can retrieve the information on a specific pizza.
 - UC-3 [Edit a Pizza]: Admin can create, update, and delete pizzas from the menu.
 - UC-4 [Show Current Location Offer]: User can retrieve special menu by location
-- Customers can browse the pizzeria menu and place an order.
-- Customers can authenticate by logging in and check the available bonus points.
-- Customers can complete their order by making payment.
-- Admin can view all available information about pizzas and toppings.
-- Admin can create, update, and delete pizzas from the menu.
+- UC-5 [Place an order]: Customers can browse the pizzeria menu and place an order.
+- UC-6 [Authenticate by logging in]: Customers can authenticate by logging in and check the available bonus points.
+- UC-7 [Complete order with payment]: Customers can complete their order by making payment.
+
 ## Design
 
 ![](images/myorder.png)
