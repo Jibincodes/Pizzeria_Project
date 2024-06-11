@@ -122,10 +122,8 @@ The rest of the API documentation is provided in the Swagger endpoint. The defau
 But if you have any questions regarding the implementation of the business logic, please let us know :)
 
 ## Implementation
-> 🚧: Briefly describe your technology stack, which apps were used and for what.
 
 ### Backend Technology
-> 🚧: It is suggested to clone this repository, but you are free to start from fresh with a Spring Initializr. If so, describe if there are any changes to the PizzaRP e.g., different dependencies, versions & etc... Please, also describe how your database is set up. If you want a persistent or in-memory H2 database check [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/resources/application.properties). If you have placeholder data to initialize at the app, you may use a variation of the method **initPlaceholderData()** available at [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/java/ch/fhnw/pizza/PizzaApplication.java).
 
 This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
 
@@ -155,6 +153,8 @@ Then, the following further dependencies have been added to the project `pom.xml
       <version>2.3.0</version>
 </dependency>
 ```
+In addition, we have added the following:
+
 - OAuth2 (for token based authentication):
 ```XML
 <dependency>
@@ -166,7 +166,11 @@ Then, the following further dependencies have been added to the project `pom.xml
 ### Frontend Technology
 > 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
 
-This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/brugg5pizzeria#/home. 
+This Application is relying on a low code platform, called [Buidbase](https://budibase.com/) for the frontend.
+
+The goal with Budibase is to show a demo of the running application and how it can be connected to the backend. We used the sitemap and backend structure to decide on the views for this application. The views would mainly include: home page, login page, menu page, profile page, order page, payment confirmation page, and about us page.
+
+This Web application is available for preview at https://inttech.budibase.app/app/brugg5pizzeria#/home. 
 
 ## Execution
 > 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
@@ -184,7 +188,7 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 
 ## Project Management
 
-As described below, we had divided our team into 2 parts. Since Jibin has more experience in the software development background, he happily accepted the part of working in the backend. And the rest of us mainly worked on the domain design and front-end implementations using Budibase.
+As described below, we had divided our team into 2. Since Jibin has more experience in the software development background, he happily accepted the part of working in the backend. And the rest of us mainly worked on the domain design and front-end implementations using Budibase.
 
 ### Roles
 - Back-end developer: Jibin Mathew Peechatt
