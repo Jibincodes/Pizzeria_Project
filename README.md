@@ -39,16 +39,14 @@ maintained by the admin.
 
 ### User Stories
 1. As a user, I want to see the menu so that I can choose my favorite pizza and toppings.
-2. As a user, I want to create my own profile so that I can store my data.
+2. As a user, I want to create my own profile so that I can save my details and view my previous orders.
 3. As a user, I want to log in so that I can authenticate myself and see my bonus points.
-4. As a user, I want to customize the pizza with specific toppings so that it matches my 
-preferences.
-5. As a user, I want to make the payment so that I can complete the order.
-6. As a User, I want to use list views so that I can access public pages.
-7. As an Admin, I want to use list views to explore and read my business data.
-8. As an Admin, I want to use edit and create views to maintain my business data. For 
+4. As a user, I want to make the payment so that I can complete the order.
+5. As a User, I want to use list views so that I can access public pages.
+6. As an Admin, I want to use list views to explore and read my business data.
+7. As an Admin, I want to use edit and create views to maintain my business data. For 
 example, the ability to add new pizzas or update existing pizzas on the menu.
-9. As an Admin, I want a consistent and simple web application so that it is easy to use and 
+8. As an Admin, I want a consistent and simple web application so that it is easy to use and 
 maintain.
 
 ### Use Case
