@@ -23,10 +23,7 @@ This is a minimal project that supports all the minimal CRUD functions needed to
   - [Milestones](#milestones)
 
 ## Analysis
-> 🚧: You can reuse the analysis (you made) from other projects (e.g., requirement engineering), but it must be submitted according to the following template. 
-
-
-
+ 
 ### Scenario
 
 As a group work, we decided to create an extended form of the pizzeria web application where 
