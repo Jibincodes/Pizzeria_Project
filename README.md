@@ -84,7 +84,9 @@ Here is the planned sitemap for our pizzeria web application. It would consist o
 
 ![](images/BudibaseDesign_menu.png)
 
+![](images/BudibaseDesign_profile.png)
 
+Here is our latest prototype design that we have built on budibase and we have tried to keep it as close as possible to the planned design.
 
 ### Domain Design
 
