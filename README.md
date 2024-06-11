@@ -4,7 +4,6 @@ This is a minimal project that supports all the minimal CRUD functions needed to
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-
 #### Contents:
 - [Analysis](#analysis)
   - [Scenario](#scenario)
