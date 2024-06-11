@@ -4,7 +4,6 @@ This is a minimal project that supports all the minimal CRUD functions needed to
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-> 🚧: **This is a template project**: Make sure you adapt this documentation and the source code in this project according to your needs and use case. Comments are provided with "🚧:". Do not leave these comments in your final submission!
 
 #### Contents:
 - [Analysis](#analysis)
