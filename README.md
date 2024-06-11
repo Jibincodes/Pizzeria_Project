@@ -81,7 +81,10 @@ Here are some of the page design we have created for our pizzeria web applicatio
 Here is the planned sitemap for our pizzeria web application. It would consist of a home page, menu, about us page, order and confirmation page, and also user pages.
 
 ### Prototype
-> 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
+
+![](images/BudibaseDesign_menu.png)
+
+
 
 ### Domain Design
 
